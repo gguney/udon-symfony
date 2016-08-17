@@ -1,0 +1,40 @@
+index:
+        path:     /
+        defaults: { _controller: AdminBundle:Security:index }
+login:
+        path:     /login
+        defaults: { _controller: AdminBundle:Security:login }
+login_check:
+        path:     /login_check
+logout:
+        path:     /logout
+about:
+    resource: "@AdminBundle/Resources/config/routing/about.yml"
+    prefix:   /about
+contact:
+    resource: "@AdminBundle/Resources/config/routing/contact.yml"
+    prefix:   /contact
+user:
+    resource: "@AdminBundle/Resources/config/routing/user.yml"
+    prefix:   /user
+profile:
+    resource: "@AdminBundle/Resources/config/routing/profile.yml"
+    prefix:   /profile
+management:
+    resource: "@AdminBundle/Resources/config/routing/management.yml"
+    prefix:   /management
+menu:
+    resource: "@AdminBundle/Resources/config/routing/menu.yml"
+    prefix:   /menu
+category:
+    resource: "@AdminBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+food:
+    resource: "@AdminBundle/Resources/config/routing/food.yml"
+    prefix:   /food
+role:
+    resource: "@AdminBundle/Resources/config/routing/role.yml"
+    prefix:   /role
+usersroles:
+    resource: "@AdminBundle/Resources/config/routing/usersroles.yml"
+    prefix:   /usersroles

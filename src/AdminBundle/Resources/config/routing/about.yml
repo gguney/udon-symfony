@@ -1,0 +1,5 @@
+about_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:About:index" }
+    methods:  GET
+

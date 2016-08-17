@@ -1,0 +1,21 @@
+{% extends "AdminBundle:layouts:app.html.twig" %}
+    {% block content %}
+        {% embed "AdminBundle:partials:formDiv.html.twig" %}
+            {% block formDiv %}
+                {{ form_start(form) }}
+                <div class="w-row">
+                    <div class="w-column w-col-4">
+                        {{ form_widget(form.username) }}
+
+                    </div>
+                </div>
+                <input type="submit" value="Create" />
+                {{ form_end(form) }}
+                <ul>
+                    <li>
+                        <a href="{{ path('user_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}

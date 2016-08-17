@@ -1,0 +1,48 @@
+{% extends 'AdminBundle:layouts:app.html.twig' %}
+
+
+{% block content %}
+    <h1>Users Roles</h1>
+
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Role</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for usersRole in usersRoles %}
+            <tr>
+                <td><a href="{{ path('usersroles_show', { 'id': usersRole.id }) }}">{{ usersRole.id }}</a></td>
+                <td>{{ usersRole.username }}</td>
+                <td>{{ usersRole.roleName }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('usersroles_edit', { 'id': usersRole.id }) }}">edit</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('usersroles_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
+{% block feet %}
+    <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,24 @@
+usersroles_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:UsersRoles:index" }
+    methods:  GET
+
+usersroles_show:
+    path:     /{id}/show
+    defaults: { _controller: "AdminBundle:UsersRoles:show" }
+    methods:  GET
+
+usersroles_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:UsersRoles:new" }
+    methods:  [GET, POST]
+
+usersroles_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:UsersRoles:edit" }
+    methods:  [GET, POST]
+
+usersroles_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:UsersRoles:delete" }
+    methods:  DELETE

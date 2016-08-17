@@ -1,0 +1,14 @@
+owner:
+    resource: "@OwnerBundle/Resources/config/routing.yml"
+    host:     "owner.udonsy"
+    prefix:   /
+customer:
+    resource: "@CustomerBundle/Resources/config/routing.yml"
+    host:     "udonsy"
+    prefix:   /
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    host:     "admin.udonsy"
+    prefix:   /
+
+

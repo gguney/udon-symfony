@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="" name="description">
+    <meta content="" name="author">
+    <title>UDONSY</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: {
+                families: ["Crimson Text:regular,italic,600,600italic,700,700italic"]
+            }
+        });
+    </script>
+    {% block head %}
+    {% endblock %}
+    <link rel="stylesheet" href="{{ asset('bundles/adminBundle/css/normalize.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/adminBundle/css/webflow.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/adminBundle/css/adminudonsy.webflow.css') }}" />
+
+    <link rel="stylesheet" href="{{ asset('bundles/adminBundle/css/dataTable.css') }}" />
+
+
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
+<link rel="apple-touch-icon" href="{{ asset('images/favicon.png') }}">
+
+</head>
+<body>
+    {% include "AdminBundle:layouts:menu.html.twig" %}
+    <div class="w-section main-section">
+        <div class="main-container">
+                {% block content %}
+                {% endblock %}
+        {% include "AdminBundle:layouts:footer.html.twig" %}
+
+    </div>
+</div>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="{{ asset('bundles/adminBundle/js/webflow.js') }}"></script>
+<!--[if lte IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+    {% block feet %}
+    {% endblock %}
+</body>
+
+
+
+
+

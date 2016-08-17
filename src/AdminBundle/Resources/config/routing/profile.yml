@@ -1,0 +1,10 @@
+profile_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:Profile:index" }
+    methods:  GET
+
+profile_edit:
+    path:     /edit
+    defaults: { _controller: "AdminBundle:Profile:edit" }
+    methods:  [GET, POST]
+

@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: 46.101.222.233
+    database_port: 5432
+    database_name: udonsy
+    database_user: postgres
+    database_password: re59tnNaG2L4KkmN
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: aa886488ef3dbd48615048f46fb5bba2258d83e0

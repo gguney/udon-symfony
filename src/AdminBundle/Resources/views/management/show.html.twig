@@ -1,0 +1,49 @@
+{% extends 'AdminBundle:layouts:app.html.twig' %}
+
+{% block content %}
+    <h1>Management</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ management.id }}</td>
+            </tr>
+            <tr>
+                <th>Brandname</th>
+                <td>{{ management.brandName }}</td>
+            </tr>
+            <tr>
+                <th>Companyname</th>
+                <td>{{ management.companyName }}</td>
+            </tr>
+            <tr>
+                <th>Taxnumber</th>
+                <td>{{ management.taxNumber }}</td>
+            </tr>
+            <tr>
+                <th>Organizationnumber</th>
+                <td>{{ management.organizationNumber }}</td>
+            </tr>
+        <tr>
+            <th>Owner</th>
+            <td>{{ management.refOwnerId }}</td>
+        </tr>
+
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('management_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('management_edit', { 'id': management.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

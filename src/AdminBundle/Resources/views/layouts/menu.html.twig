@@ -1,0 +1,145 @@
+<div data-collapse="medium" data-animation="default" data-duration="400" data-contain="1" class="w-nav navbar">
+    <div class="w-clearfix menu-container">
+        <a href="#" class="w-nav-brand"><img height="59" src="{{ asset('bundles/AdminBundle/images/udon.png') }}">
+        </a>
+        <nav role="navigation" class="w-nav-menu">
+            <a href="{{ path('index') }}" class="w-nav-link nav-link">Home</a>
+            {% if app.user %}
+                {%if is_granted('ROLE_ADMIN') %}
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>User</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('user_index') }}" class="w-dropdown-link nav-link">Users</a>
+                    <a href="{{ path('user_new') }}" class="w-dropdown-link nav-link">User Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Role</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('role_index') }}" class="w-dropdown-link nav-link">Roles</a>
+                    <a href="{{ path('role_new') }}" class="w-dropdown-link nav-link">Role Create</a>
+                </nav>
+            </div>
+                    <div data-delay="0" class="w-dropdown dropdown">
+                        <div class="w-dropdown-toggle dropdown-toggle">
+                            <div>Users-Roles</div>
+                            <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                        </div>
+                        <nav class="w-dropdown-list dropdown-list">
+                            <a href="{{ path('usersroles_index') }}" class="w-dropdown-link nav-link">Users-Roles</a>
+                            <a href="{{ path('usersroles_new') }}" class="w-dropdown-link nav-link">User-Role Create</a>
+                        </nav>
+                    </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Management</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('management_index') }}" class="w-dropdown-link nav-link">Managements</a>
+                    <a href="{{ path('management_new') }}" class="w-dropdown-link nav-link">Management Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Menu</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('menu_index') }}" class="w-dropdown-link nav-link">Menus</a>
+                    <a href="{{ path('menu_new') }}" class="w-dropdown-link nav-link">Menu Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Category</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('category_index') }}" class="w-dropdown-link nav-link">Categories</a>
+                    <a href="{{ path('category_new') }}" class="w-dropdown-link nav-link">Category Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Food</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('food_index') }}" class="w-dropdown-link nav-link">Foods</a>
+                    <a href="{{ path('food_new') }}" class="w-dropdown-link nav-link">Food Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Countries</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Countries</a>
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Country Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Cities</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Cities</a>
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">City Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Content</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Contents</a>
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Content Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Ingredient</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Ingredients</a>
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Ingredient Create</a>
+                </nav>
+            </div>
+            <div data-delay="0" class="w-dropdown dropdown">
+                <div class="w-dropdown-toggle dropdown-toggle">
+                    <div>Order</div>
+                    <div class="w-icon-dropdown-toggle dropdown-toggle-icon"></div>
+                </div>
+                <nav class="w-dropdown-list dropdown-list">
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Orders</a>
+                    <a href="{{ path('index') }}" class="w-dropdown-link nav-link">Order Create</a>
+                </nav>
+            </div>
+            {% endif %}
+                <a href="{{ path('profile_index') }}" class="w-nav-link nav-link">Profile</a>
+                <a href="{{ path('logout') }}" class="w-nav-link nav-link">Logout</a>
+             {% else %}
+                 <a href="{{ path('login') }}" class="w-nav-link nav-link">Register</a>
+                 <a href="{{ path('login') }}" class="w-nav-link nav-link">Login</a>
+            {% endif %}
+
+            <a href="{{ path('about_index') }}" class="w-nav-link nav-link">About</a>
+            <a href="{{ path('contact_index') }}" class="w-nav-link nav-link">Contact</a>
+        </nav>
+
+        <div class="w-nav-button">
+            <div class="w-icon-nav-menu"></div>
+        </div>
+    </div>
+</div>

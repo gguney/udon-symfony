@@ -1,0 +1,39 @@
+{% extends 'AdminBundle:layouts:app.html.twig' %}
+
+{% block content %}
+    <h1>Profile</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Username</th>
+                <th>Emailaddress</th>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Remembertoken</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.emailAddress }}</td>
+                <td>{{ user.firstName }}</td>
+                <td>{{ user.lastName }}</td>
+                <td>{{ user.rememberToken }}</td>
+                <td>
+                    <ul>
+
+                        <li>
+                            <a href="{{ path('profile_edit') }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+{% endblock %}

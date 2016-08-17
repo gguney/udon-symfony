@@ -1,0 +1,56 @@
+{% extends 'AdminBundle:layouts:app.html.twig' %}
+
+{% block content %}
+    <h1>Food List</h1>
+
+    <table id="myTable">
+
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Refcategoryid</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Number</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for food in foods %}
+            <tr>
+                <td><a href="{{ path('food_show', { 'id': food.id }) }}">{{ food.id }}</a></td>
+                <td>{{ food.refCategoryId }}</td>
+                <td>{{ food.name }}</td>
+                <td>{{ food.description }}</td>
+                <td>{{ food.number }}</td>
+                <td>{{ food.price }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('food_show', { 'id': food.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('food_edit', { 'id': food.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('food_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
+{% block feet %}
+    <script src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#myTable').DataTable();
+        });
+    </script>
+{% endblock %}

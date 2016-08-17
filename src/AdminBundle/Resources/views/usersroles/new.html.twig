@@ -1,0 +1,30 @@
+{% extends "AdminBundle:layouts:app.html.twig" %}
+    {% block content %}
+        {% embed "AdminBundle:partials:formDiv.html.twig" %}
+            {% block formDiv %}
+                    {{ form_start(form) }}
+
+
+                <label>asd</label>
+                <select id="users_roles_userId" name="userId">
+                    {% for user in users %}
+                        <option value="{{ user.id }}">{{ user.username }}</option>
+                    {% endfor %}
+                </select>
+                <br>
+                {% for role in roles %}
+                    <input id="users_roles_roleId" name="roleId[]" type="checkbox" value="{{ role.id }}">{{ role.name }}<br>
+                {% endfor %}
+
+
+                <input type="submit" value="Create" />
+
+                {{ form_end(form) }}
+                <ul>
+                    <li>
+                        <a href="{{ path('usersroles_index') }}">Back to the list</a>
+                    </li>
+                </ul>
+            {% endblock %}
+        {% endembed %}
+    {% endblock %}

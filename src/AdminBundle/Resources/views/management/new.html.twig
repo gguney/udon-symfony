@@ -1,0 +1,63 @@
+{#{% extends 'AdminBundle:layouts:app.html.twig' %}#}
+
+{#{% block content %}#}
+    {#<h1>Management creation</h1>#}
+
+    {#{{ form_start(form) }}#}
+        {#<div class="w-row">#}
+            {#<div class="w-column w-col-4">#}
+                    {#<label>Owner</label>#}
+            {#</div>#}
+            {#<div class="w-column w-col-8">#}
+                {#<select id="management_refOwnerId" name="management[refOwnerId]">#}
+                    {#{% for user in users %}#}
+                        {#<option value="{{ user.id }}">{{ user.username }}</option>#}
+                    {#{% endfor %}#}
+                {#</select>#}
+            {#</div>#}
+        {#</div>#}
+        {#<input type="submit" value="Create" />#}
+    {#{{ form_end(form) }}#}
+
+    {#<ul>#}
+        {#<li>#}
+            {#<a href="{{ path('management_index') }}">Back to the list</a>#}
+        {#</li>#}
+    {#</ul>#}
+{#{% endblock %}#}
+{% extends 'AdminBundle:layouts:app.html.twig' %}
+
+{% block content %}
+    <h1>Management creation</h1>
+
+        <form method="post" name="management">
+            <div class="w-row">
+                <div class="w-column w-col-4">
+                    <label>Owner</label>
+                </div>
+                <div class="w-column w-col-8">
+                    <select id="management_refOwnerId" name="management[refOwnerId]">
+                        {% for user in users %}
+                            <option value="{{ user.id }}">{{ user.username }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label for="companyName">company Name</label>
+                <input type="text" id="companyName" name="management[companyName]">
+            </div>
+            <div>
+                <label for="taxNumber">Tax Number</label>
+                <input type="text" id="taxNumber" name="management[taxNumber]">
+            </div>
+            <input type="submit" value="Create" />
+
+        </form>
+
+    <ul>
+        <li>
+            <a href="{{ path('management_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,12 @@
+#    udon.example:
+#        class: AdminBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+parameters:
+
+services:
+    app.user.listener:
+        class: AdminBundle\EventListener\UserListener
+        arguments:
+            - ['@security.token_storage','@doctrine.orm.entity_manager']
+        tags:
+            - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }

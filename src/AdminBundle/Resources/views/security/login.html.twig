@@ -1,0 +1,30 @@
+{% extends "AdminBundle:layouts:app.html.twig" %}
+{% block content %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+   {% embed "AdminBundle:partials:formDiv.html.twig" %}
+       {% block formDiv %}
+    <form class="form-horizontal" role="form" action="{{ path('login_check') }}" method="post">
+
+                    <label class="form-label" for="username">Username:</label>
+                    <input class="w-input text-field" type="text" id="username" name="_username" value="" placeholder="" required/>
+                    <label class="form-label" for="password">Password:</label>
+                    <input class="w-input text-field" type="password" id="password" name="_password" value=""
+                           placeholder="" required/>
+                 <a class="link" href="">Forgot Your Password?</a>
+                <div class="w-checkbox w-clearfix checbox-field">
+                    <input id="checkbox" type="checkbox" name="checkbox" data-name="Checkbox" class="w-checkbox-input">
+                    <label for="checkbox" class="w-form-label">Remember Me</label>
+                </div>
+                    <a class="w-button button-bad">CANCEL</a>
+                    <input type="submit" value="SUBMIT" class="w-button button" >
+                    <a class="w-button button-good" style="float:left">REGISTER</a>
+            <input type="hidden" name="_csrf_token"
+                   value="{{ csrf_token('authenticate') }}">
+        </form>
+    {% endblock %}
+{% endembed %}
+{% endblock %}
+
+

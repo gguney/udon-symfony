@@ -1,0 +1,14 @@
+{% extends "AdminBundle:layouts:app.html.twig" %}
+{% block content %}
+<p>Index Page </p>
+
+    {% if app.user %}
+        {{  app.user.username  }}
+        <p style="margin-top:300px">
+
+            {{  dump(app) }}
+        </p>
+
+    {% endif  %}
+
+{% endblock %}

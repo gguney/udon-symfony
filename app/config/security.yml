@@ -1,0 +1,64 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+#        Symfony\Component\Security\Core\User\User: plaintext
+        Symfony\Component\Security\Core\User\User:
+            algorithm: bcrypt
+            cost: 12
+        AdminBundle\Entity\User:
+            algorithm: bcrypt
+            cost: 12
+    role_hierarchy:
+        ROLE_SUPER_ADMIN: [ROLE_ADMIN]
+        ROLE_ADMIN: [ROLE_OWNER]
+        ROLE_OWNER: [ROLE_EMPLOYEE]
+    providers:
+        chain_provider:
+            chain:
+#                providers:  [in_memory, user_db]
+                providers:  [user_db]
+#        in_memory:
+#            memory:
+#                users:
+#                    admin:  { password: 123456, roles: ROLE_ADMIN }
+        user_db:
+            entity: { class:  AdminBundle:User, property:  username  }
+        database:
+            entity:
+                class: AdminBundle:User
+    firewalls:
+        main:
+            pattern:  /.*
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                default_target_path:  /
+                csrf_token_generator: security.csrf.token_manager
+            logout:
+                path: /logout
+                target: /
+            security: true
+            anonymous: true
+    access_control:
+        - { host: admin.udons, path: /user/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /role/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /management/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /menu/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /category/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /food/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /country/.* , roles: ROLE_ADMIN}
+        - { host: admin.udons, path: /city/.* , roles: ROLE_ADMIN}
+        - { host: user.udons, roles: ROLE_USER}
+
+        - { path: /login, roles:  IS_AUTHENTICATED_ANONYMOUSLY  }
+#        - { path: /user, roles: ROLE_ADMIN}
+        - { path: /.*, roles:  IS_AUTHENTICATED_ANONYMOUSLY }
+
+#
+#                - { path: ^/admin, roles: ROLE_USER_IP, ip: 127.0.0.1 }
+#                - { path: ^/admin, roles: ROLE_USER_HOST, host: symfony\.com$ }
+#                - { path: ^/admin, roles: ROLE_USER_METHOD, methods: [POST, PUT] }
+#                - { path: ^/admin, roles: ROLE_USER }
+#
+#
